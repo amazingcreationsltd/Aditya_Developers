@@ -739,15 +739,16 @@
                       adityadevelopers2010@gmail.com
                     </a>
                   </div> -->
-                  
+
                   <div class="font-semibold">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adityadevelopers2010@gmail.com"
+                    <a id="emailLink"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=adityadevelopers2010@gmail.com"
                       target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">
                       adityadevelopers2010@gmail.com
                     </a>
                   </div>
 
-                  
+
                   <div class="text-sm muted">BOQs & drawings welcome</div>
                 </div>
               </div>
@@ -893,6 +894,14 @@
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
+      // Mobile/tablet -> mailto (opens Gmail app), Desktop -> Gmail web
+      const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const link = document.getElementById('emailLink');
+      if (isMobile) {
+        link.href = 'mailto:adityadevelopers2010@gmail.com';
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+      }
       // Mobile menu
       document.getElementById('menuBtn').addEventListener('click', () => {
         document.getElementById('mobileMenu').classList.toggle('hidden');
