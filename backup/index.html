@@ -12,12 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" type="module"></script>
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" type="module"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    emailjs.init("WEVyYZvifABLl78PK");
-  </script>
   <script>
     tailwind.config = {
       theme: {
@@ -727,7 +723,8 @@
                 <div class="soft-icon w-10 h-10 flex items-center justify-center"><ion-icon
                     name="mail-outline"></ion-icon></div>
                 <div>
-                  <div class="font-semibold"><a href="/cdn-cgi/l/email-protection#49282d203d30282d2c3f2c2526392c3b3a7b797879092e24282025672a2624"><span class="__cf_email__" data-cfemail="b2d3d6dbc6cbd3d6d7c4d7deddc2d7c0c180828382f2d5dfd3dbde9cd1dddf">[email&#160;protected]</span></a>
+                  <div class="font-semibold"><a
+                      href="mailto:adityadevelopers2010@gmail.com">adityadevelopers2010@gmail.com</a>
                   </div>
                   <div class="text-sm muted">BOQs & drawings welcome</div>
                 </div>
@@ -867,7 +864,7 @@
     </div>
     <div class="h-20 md:hidden"></div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
       // Mobile menu
       document.getElementById('menuBtn').addEventListener('click', () => {
@@ -905,42 +902,29 @@
       //   e.target.reset();
       // });
 
-// Quote form -> EmailJS + WhatsApp
+      // Quote form -> WhatsApp draft
       document.getElementById('quoteForm').addEventListener('submit', (e) => {
         e.preventDefault();
         const d = new FormData(e.target);
-        const params = {
-          name: d.get('name'),
-          phone: d.get('phone'),
-          location: d.get('location'),
-          type: d.get('type'),
-          area: d.get('area'),
-          budget: d.get('budget'),
-          message: d.get('message') || ''
-        };
-        emailjs.send('service_tfiwc6w', 'template_jewmxla', params)
-          .then(() => {
-            document.getElementById('formMsg').classList.remove('hidden');
-            // WhatsApp anchor-click (bypasses popup blockers)
-            const msg = `Hi Aditya Developers, I'm interested in a quote.%0AName: ${params.name}%0APhone: ${params.phone}%0ALocation: ${params.location}%0AType: ${params.type}%0AArea: ${params.area} sqft%0ABudget: ${params.budget}%0A${encodeURIComponent(params.message)}`;
-            const link = document.createElement('a');
-            link.href = `https://wa.me/918983621905?text=${msg}`;
-            link.target = '_blank';
-            link.rel = 'noopener';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            e.target.reset();
-          })
-          .catch(err => {
-            console.error('EmailJS error:', err);
-            alert('Something went wrong. Please try again or WhatsApp us directly.');
-          });
+        const msg = `Hi Aditya Developers, I'm interested in a quote.%0AName: ${d.get('name')}%0APhone: ${d.get('phone')}%0ALocation: ${d.get('location')}%0AType: ${d.get('type')}%0AArea: ${d.get('area')} sqft%0ABudget: ${d.get('budget')}%0A${encodeURIComponent(d.get('message') || '')}`;
+
+        document.getElementById('formMsg').classList.remove('hidden');
+
+        // Create temporary anchor + click — bypasses popup blockers
+        const link = document.createElement('a');
+        link.href = `https://wa.me/9198XXXXXXXX?text=${msg}`;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        e.target.reset();
       });
 
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
     <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a0ecc36b1be0b953',t:'MTc4MTk3OTM3Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1a1bce719af0c66',t:'MTc4Mzg3NzAyOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 
 </html>
